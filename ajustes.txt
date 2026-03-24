@@ -1,0 +1,17 @@
+Quando não rodar o comando:
+    npm init --y
+
+executar: 
+    Set-ExecutionPolicy RemoteSigned -Scope CurrentUser 
+
+----
+
+iniciar o server: node {arquivo}.js 
+stop no server: Ctrl + C
+
+----
+Install:
+    npm install prompt-sync
+
+    **quando usamos o prompt-sync ele é usado pelo terminal, comando:
+    node {arquivo}.js
