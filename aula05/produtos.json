@@ -1,0 +1,17 @@
+{
+  "autoIncrement": 3,
+  "products": [
+    {
+      "id": 1,
+      "name": "batata",
+      "category": "comida",
+      "price": 7
+    },
+    {
+      "id": 2,
+      "name": "bateria",
+      "category": "eletro",
+      "price": "12"
+    }
+  ]
+}
