@@ -1,20 +1,22 @@
 const repository = require('../repository/produto_repository.js');
 
 function validarNumero(valor) {
-    return typeof valor === "number" && !isNaN(valor);
+    return !isNaN(Number(valor));
 }
 
 // INSERT
-async function insert(name, price) {
+async function insert(name, category, price) {
     if (!name || price === undefined) {
         throw new Error("Nome e preço são obrigatórios");
     }
 
-    if (!validarNumero(price)) {
+    if (isNaN(Number(price))) {
         throw new Error("Preço deve ser um número");
     }
 
-    return await repository.insert(name, "default", price);
+    price = Number(price);
+
+    return await repository.insert(name, category, price);
 }
 
 // FIND BY ID

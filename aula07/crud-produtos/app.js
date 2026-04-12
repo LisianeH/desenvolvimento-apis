@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express()
-const PORT = 3001;
+const PORT = 3002;
 
 const service = require('./service/produto_service.js');
 const repository = require('./repository/produto_repository.js');

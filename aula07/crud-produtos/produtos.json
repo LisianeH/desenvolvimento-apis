@@ -1,0 +1,17 @@
+{
+  "autoIncrement": 4,
+  "products": [
+    {
+      "id": 1,
+      "name": "Mouse",
+      "category": "Eletro",
+      "price": 25
+    },
+    {
+      "id": 3,
+      "name": "Feijão Carioquinha",
+      "category": "Comida",
+      "price": 9.5
+    }
+  ]
+}
