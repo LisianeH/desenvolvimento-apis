@@ -1,0 +1,149 @@
+{
+  "info": {
+    "_postman_id": "c33e1398-2fae-4784-9378-2bb4a7dfeb07",
+    "name": "Aula 06",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "53954160",
+    "_collection_link": "https://go.postman.co/collection/53954160-c33e1398-2fae-4784-9378-2bb4a7dfeb07?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Pág Inicial - API",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3001",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3001"
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Listar todos",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3001/produtos",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3001",
+          "path": [
+            "produtos"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Listar por ID",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"name\": \"mouse\",\r\n  \"category\": \"eletro\",\r\n  \"price\": 50\r\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3001/produtos/{id}",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3001",
+          "path": [
+            "produtos",
+            "{id}"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Criar novo produto",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"name\": \"{name}\",\r\n  \"category\": \"{category}\",\r\n  \"price\": {price}\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3001/produtos",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3001",
+          "path": [
+            "produtos"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Atualizar - Passando ID",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"name\": \"{name}\",\r\n  \"category\": \"{category}\",\r\n  \"price\": {price}\r\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3001/produtos/{id}",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3001",
+          "path": [
+            "produtos",
+            "{id}"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete - Por ID",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"name\": \"mouse\",\r\n  \"category\": \"eletro\",\r\n  \"price\": 50\r\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3001/produtos/{id}",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3001",
+          "path": [
+            "produtos",
+            "{id}"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
