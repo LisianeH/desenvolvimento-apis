@@ -1,0 +1,95 @@
+{
+  "info": {
+    "_postman_id": "79cfaefd-1e53-4b73-a3a2-27a676627cb5",
+    "name": "Aula 09",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "53954160",
+    "_collection_link": "https://go.postman.co/collection/53954160-79cfaefd-1e53-4b73-a3a2-27a676627cb5?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Pág Inicial - API",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3003",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3003"
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Listar todos",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3003/clientes",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3003",
+          "path": [
+            "clientes"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Listar por CPF/CNPJ",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3002/clientes/{cpj/cnpj}",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3002",
+          "path": [
+            "clientes",
+            "{cpj",
+            "cnpj}"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Cadastro de cliente",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"cpfCnpj\": \"{cpfCnpj}\",\r\n    \"typePerson\": \"{typePerson}\",\r\n    \"name\": \"{name}\",\r\n    \"email\": \"{email}\",\r\n    \"dateOfBirth\": \"{dateOfBirth}\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3003/cadastro",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3003",
+          "path": [
+            "cadastro"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
