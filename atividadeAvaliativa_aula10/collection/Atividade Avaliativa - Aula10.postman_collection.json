@@ -1,0 +1,165 @@
+{
+  "info": {
+    "_postman_id": "2c711d35-59e4-4aa2-b7ba-81ee3789f67a",
+    "name": "Atividade Avaliativa - Aula10",
+    "description": "### Welcome to Postman! This is your first collection.\n\nCollections are your starting point for building and testing APIs. You can use this one to:\n\n• Group related requests  \n• Test your API in real-world scenarios  \n• Document and share your requests\n\nUpdate the name and overview whenever you’re ready to make it yours.\n\n[Learn more about Postman Collections.](https://learning.postman.com/docs/collections/collections-overview/)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "53954160",
+    "_collection_link": "https://go.postman.co/collection/53954160-2c711d35-59e4-4aa2-b7ba-81ee3789f67a?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Pág Inicial - API",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3004",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3004"
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Listar todos",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3004/pedidos",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3004",
+          "path": [
+            "pedidos"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Listar todos pela situação",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3004/pedidos/situacao/{situação}",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3004",
+          "path": [
+            "pedidos",
+            "situacao",
+            "{situação}"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Listar por ID pedido",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3004/pedidos/(id}",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3004",
+          "path": [
+            "pedidos",
+            "(id}"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Cadastrar Novo Pedido",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"clientDocument\": \"{clientDocument}\",\r\n    \"clientName\": \"{clientName}\",\r\n    \"productName\": \"{productName}\",\r\n    \"productPrice\": \"{productPrice}\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3004/cadastro",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3004",
+          "path": [
+            "cadastro"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Atualizar Situação do Pedido",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"situation\": \"{situation}\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3004/pedidos/{id}",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3004",
+          "path": [
+            "pedidos",
+            "{id}"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Deletar um pedido",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3004/pedidos/{id}",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3004",
+          "path": [
+            "pedidos",
+            "{id}"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
