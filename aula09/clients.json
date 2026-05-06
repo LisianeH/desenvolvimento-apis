@@ -1,0 +1,14 @@
+{
+  "autoIncrement": 2,
+  "clients": [
+    {},
+    {
+      "id": 1,
+      "cpfCnpj": "04339277045",
+      "typePerson": "F",
+      "name": "Lisiane Hoffmeister",
+      "email": "lisiane.h67@gmail.com",
+      "dateOfBirth": "06/07/1999"
+    }
+  ]
+}
