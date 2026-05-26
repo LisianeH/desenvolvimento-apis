@@ -20,6 +20,7 @@ async function listAllRequests() {
         dateRequest: r.dateRequest,
         clientName: r.clientName,
         situation: r.situation,
+        productName: r.productName,
         productPrice: r.productPrice
     }));
 }
@@ -27,7 +28,16 @@ async function listAllRequests() {
 async function listAllRequestsBySituation(situation) {
     await utils.validadeSituation(situation);
     const requests = await repository.listAllRequests();
-    return requests.filter(r => r.situation === situation);
+    return requests
+        .filter(r => r.situation === situation)
+        .map(r => ({
+            id: r.id,
+            dateRequest: r.dateRequest,
+            clientName: r.clientName,
+            situation: r.situation,
+            productName: r.productName,
+            productPrice: r.productPrice
+        }));
 }
 
 // US03 – Consulta de um pedido

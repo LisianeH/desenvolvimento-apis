@@ -49,7 +49,7 @@
         "method": "GET",
         "header": [],
         "url": {
-          "raw": "http://localhost:3004/pedidos/situacao/{situação}",
+          "raw": "http://localhost:3004/pedidos?situation={situacao}",
           "protocol": "http",
           "host": [
             "localhost"
