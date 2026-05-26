@@ -22,7 +22,7 @@ app.post('/cadastro', async (req, res) => {
 
         res.status(201).json({ message: result });
     } catch (error) {
-        res.status(409).json({ error: error.message });
+        res.status(400).json({ error: error.message });
     }
 });
 
@@ -39,7 +39,7 @@ app.get('/pedidos', async (req, res) => {
         const requests = await service.listAllRequests();
         res.json(requests);
     } catch (error) {
-        res.status(404).json({ error: error.message });
+        res.status(400).json({ error: error.message });
     }
 });
 
@@ -49,7 +49,7 @@ app.get('/pedidos/:id', async (req, res) => {
         const request = await service.findById(req.params.id);
         res.json(request);
     } catch (error) {
-        res.status(404).json({ error: error.message });
+        res.status(400).json({ error: error.message });
     }
 });
 
@@ -62,7 +62,7 @@ app.put('/pedidos/:id', async (req, res) => {
         const result = await service.updateRequestStatus(id, situation);
         res.json(result);
     } catch (error) {
-        res.status(404).json({ error: error.message });
+        res.status(400).json({ error: error.message });
     }
 });
 
@@ -75,25 +75,6 @@ app.delete('/pedidos/:id', async (req, res) => {
 
         res.json({ message: result });
     } catch (error) {
-        res.status(404).json({ error: error.message });
+        res.status(400).json({ error: error.message });
     }
 });
-
-/* 
-Status CODE - Erro
-C (Create) - POST
-409 Conflict: O recurso que você está tentando criar já existe (ex: um e-mail já cadastrado).
-422 Unprocessable Entity: O formato dos dados está correto (JSON válido), mas a validação semântica falhou (ex: idade mínima não atingida).
-
-R (Read) - GET
-404 Not Found: O registro ou a coleção buscada não existe.
-
-U (Update) - PUT / PATCH
-404 Not Found: O registro que você tentou alterar não foi encontrado.
-409 Conflict: O estado atual do recurso não permite a atualização (ex: atualização concorrente onde outro usuário alterou o dado primeiro).
-422 Unprocessable Entity: Os dados da atualização falharam nas validações de negócio.
-
-D (Delete) - DELETE
-404 Not Found: O registro que você tentou deletar não existe.
-409 Conflict: O recurso não pode ser excluído porque possui dependências em outros lugares (ex: tentar deletar um cliente que possui compras ativas).
-*/
