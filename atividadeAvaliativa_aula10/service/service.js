@@ -1,12 +1,12 @@
 const repository = require('../repository/repository.js');
-const utils = require('../utils/utils.js');
+const validator = require('../validator/validator.js');
 
 // US01 – Inclusão de um novo pedido
 async function insert(clientDocument, clientName, productName, productPrice) {
-    await utils.validateClientDocument(clientDocument);
-    await utils.validateName(clientName);
-    await utils.validateName(productName);
-    await utils.validateProductPrice(productPrice);
+    await validator.validateClientDocument(clientDocument);
+    await validator.validateName(clientName);
+    await validator.validateName(productName);
+    await validator.validateProductPrice(productPrice);
     
     return await repository.insert(clientDocument, clientName, productName, productPrice);
 }
@@ -26,7 +26,7 @@ async function listAllRequests() {
 }
 
 async function listAllRequestsBySituation(situation) {
-    await utils.validadeSituation(situation);
+    await validator.validadeSituation(situation);
     const requests = await repository.listAllRequests();
     return requests
         .filter(r => r.situation === situation)
@@ -42,7 +42,7 @@ async function listAllRequestsBySituation(situation) {
 
 // US03 – Consulta de um pedido
 async function findById(id) {
-    await utils.validadeIdRequest(id);
+    await validator.validadeIdRequest(id);
 
     const data = await repository.readFile();
     const request = data.requests.find(p => p.id == id);
@@ -65,8 +65,8 @@ async function findById(id) {
 
 // US04 –Atualizar a situação de um pedido
 async function updateRequestStatus(id, situation) {
-    await utils.validadeIdRequest(id);
-    await utils.validadeSituation(situation);
+    await validator.validadeIdRequest(id);
+    await validator.validadeSituation(situation);
 
     const data = await repository.readFile();
     const requestIndex = data.requests.findIndex(p => p.id == id);
@@ -83,7 +83,7 @@ async function updateRequestStatus(id, situation) {
 
 // US05 –Deletar um pedido
 async function deleteRequest(id) {
-    await utils.validadeIdRequest(id);
+    await validator.validadeIdRequest(id);
 
     return await repository.deleteRequest(id);
 }
